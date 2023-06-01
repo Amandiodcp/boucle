@@ -1,0 +1,41 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine(" votre chorégraphie e.");
+
+        string[] moves = new string[32];
+        int count = 0;
+
+        while (count < moves.Length)
+        {
+            Console.Write("Entrez un pas de danse : ");
+            string move = Console.ReadLine();
+
+            if (move == "done")
+            {
+                break;
+            }
+
+            moves[count] = move;
+            count++;
+        }
+
+        Console.Write("Entrez le nombre d'itérations : ");
+        int iterations = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Voici votre chorégraphie :");
+
+        for (int i = 0; i < iterations; i++)
+        {
+            Console.WriteLine("Itération " + (i + 1) + ":");
+
+            for (int j = 0; j < count; j++)
+            {
+                Console.WriteLine(moves[j]);
+            }
+        }
+    }
+}
